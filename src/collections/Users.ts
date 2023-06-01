@@ -9,6 +9,7 @@ const Users: CollectionConfig = {
   auth: true,
   admin: {
     useAsTitle: 'nombres',
+    
   },
   access: {
     read:()=>true,
