@@ -2,6 +2,7 @@ import { CollectionConfig } from 'payload/types';
 import { isAdmin } from '../AccesControl/isAdmin';
 import { isAdminOrEditorSelf } from '../AccesControl/isAdminorEditorSelf';
 import { isAdminFieldAccess } from '../AccesControl/FieldLevel/isAdminFieldLevel';
+import { isSelf } from '../AccesControl/isSelf';
 
 const Users: CollectionConfig = {
   slug: 'Admins',
@@ -10,10 +11,10 @@ const Users: CollectionConfig = {
     useAsTitle: 'nombres',
   },
   access: {
-    read:isAdminOrEditorSelf,
-    create:isAdmin,
-    update:isAdminOrEditorSelf,
-    delete:isAdmin
+    read:()=>true,
+    create:()=>true,
+    update:isSelf,
+    delete:()=>true
     
 
   },
@@ -30,7 +31,7 @@ const Users: CollectionConfig = {
       access: {
         // Only admins can create or update a value for this field
         create: () => true,
-        update: isAdminFieldAccess,
+        update: ()=>false,
         read:()=>true,
       }
     },

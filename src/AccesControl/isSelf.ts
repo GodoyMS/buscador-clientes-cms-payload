@@ -1,7 +1,7 @@
 import type { Access } from "payload/config";
 
 
-export const isAdminOrEditorSelf: Access = ({ req: { user } }) => {
+export const isSelf: Access = ({ req: { user } }) => {
   if (!user) return false;
 
   if(user){
