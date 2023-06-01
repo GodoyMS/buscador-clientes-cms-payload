@@ -1,11 +1,12 @@
 import { CollectionConfig } from 'payload/types';
+import { isAdmin } from '../AccesControl/isAdmin';
 
 const Registros: CollectionConfig = {
   slug: 'registros',
   admin: {
     useAsTitle: 'someField',
   },
-  access: {create: () => true, read: () => true, update: () => true, delete: () => true},
+  access: {create: () => true, read: () => true, update:isAdmin, delete: isAdmin},
   fields: [
     {
       name: 'tiempo',

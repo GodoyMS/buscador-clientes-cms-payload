@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload/types';
+import { isAdmin } from '../AccesControl/isAdmin';
 
 const Trabajadores: CollectionConfig = {
   slug: 'trabajadores',
@@ -8,10 +9,13 @@ const Trabajadores: CollectionConfig = {
   },
   access: {
     read: () => true,
+    create:isAdmin,
+    delete:isAdmin,
+    update:isAdmin
   },
   fields: [
     {
-      name:"name",
+      name:"nombres",
       type:"text"
     }
     // Email added by default
