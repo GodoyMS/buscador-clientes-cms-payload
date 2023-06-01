@@ -4,9 +4,9 @@ import type { Access } from "payload/config";
 export const isAdminOrEditorSelf: Access = ({ req: { user } }) => {
   if (!user) return false;
 
-  if (user.rolAdmin && user.rolAdmin==="admin") {
+  if (user.roladmin && user.roladmin === "admin") {
     return true;
-  } else if(user.rolAdmin && user.rolAdmin==="editor"){
+  } else if(user.roladmin && user.roladmin === "editor"){
     return{
         id:{
             equals:user.id

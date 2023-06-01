@@ -21,7 +21,7 @@ const Users: CollectionConfig = {
     {name:"nombres",
     type:"text",},
     {
-      name: "rolAdmin",
+      name: "roladmin",
       // Save this field to JWT so we can use from `req.user`
       saveToJWT: true,
       type: "text",

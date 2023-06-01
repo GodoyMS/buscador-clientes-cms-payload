@@ -9,7 +9,7 @@ const Trabajadores: CollectionConfig = {
   },
   access: {
     read: () => true,
-    create:isAdmin,
+    create:()=>true,
     delete:isAdmin,
     update:isAdmin
   },
