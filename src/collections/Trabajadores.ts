@@ -10,8 +10,8 @@ const Trabajadores: CollectionConfig = {
   access: {
     read: () => true,
     create:()=>true,
-    delete:isAdmin,
-    update:isAdmin
+    delete:()=>true,
+    update:()=>true
   },
   fields: [
     {
