@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(
   cors({
-    origin:'*',
+    origin:'https://buscador-de-clientes.vercel.app',
     credentials: true,
     //optionSuccessStatus: 200,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
