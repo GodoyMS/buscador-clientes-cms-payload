@@ -4,7 +4,7 @@ import { isAdminOrEditorSelf } from '../AccesControl/isAdminorEditorSelf';
 import { isAdminFieldAccess } from '../AccesControl/FieldLevel/isAdminFieldLevel';
 
 const Users: CollectionConfig = {
-  slug: 'Administradores',
+  slug: 'Admins',
   auth: true,
   admin: {
     useAsTitle: 'nombres',

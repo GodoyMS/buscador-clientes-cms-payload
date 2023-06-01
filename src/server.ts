@@ -4,14 +4,7 @@ import cors from "cors";
 
 require("dotenv").config();
 const app = express();
-app.use(
-  cors({
-    origin:'https://buscador-de-clientes.vercel.app',
-    credentials: true,
-    //optionSuccessStatus: 200,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  })
-);
+
 
 // Redirect root to Admin panel
 app.get("/", (_, res) => {
@@ -28,6 +21,15 @@ const start = async () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`);
     },
   });
+
+  app.use(
+    cors({
+      origin:'https://buscador-de-clientes.vercel.app',
+      credentials: true,
+      //optionSuccessStatus: 200,
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    })
+  );
 
   // Add your own express routes here
   const PORT=process.env.PORT
