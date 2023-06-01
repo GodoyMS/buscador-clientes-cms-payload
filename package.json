@@ -3,6 +3,9 @@
   "description": "Payload project created from blank template",
   "version": "1.0.0",
   "main": "dist/server.js",
+  "engines": {
+    "node":"18.12.1"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
