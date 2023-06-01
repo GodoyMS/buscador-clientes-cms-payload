@@ -14,6 +14,9 @@ export default buildConfig({
     Users,
     Trabajadores,
   ],
+  csrf: [ // whitelist of domains to allow cookie auth from
+  'https://buscador-de-clientes.vercel.app/',
+],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
