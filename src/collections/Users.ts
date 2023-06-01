@@ -11,7 +11,7 @@ const Users: CollectionConfig = {
   },
   access: {
     read:isAdminOrEditorSelf,
-    create:()=>true,
+    create:isAdmin,
     update:isAdminOrEditorSelf,
     delete:isAdmin
     
@@ -24,25 +24,15 @@ const Users: CollectionConfig = {
       name: "rolAdmin",
       // Save this field to JWT so we can use from `req.user`
       saveToJWT: true,
-      type: "select",
-      hasMany: true,
-      defaultValue: ["admin"],
+      type: "text",
+ 
+      defaultValue:"admin",
       access: {
         // Only admins can create or update a value for this field
         create: () => true,
         update: isAdminFieldAccess,
         read:()=>true,
-      },
-      options: [
-        {
-          label: "Admin",
-          value: "admin",
-        },
-        {
-          label: "Editor",
-          value: "editor",
-        },
-      ],
+      }
     },
     // Email added by default
     // Add more fields as needed
